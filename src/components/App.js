@@ -1,15 +1,24 @@
-import React from "react";
-import blogData from "../data/blog";
+import React from 'react';
+import ArticleList from './ArticleList';
 
-console.log(blogData);
+const App = () => {
+  const data = {
+    name: 'Underreacted',
+    image: '...',
+    about: 'A blog about learning React',
+    posts: [
+      { id: 1, title: 'Components 101', date: 'December 15, 2020', preview: '...', minutes: 5 },
+      { id: 2, title: 'React Data Flow', date: 'December 11, 2020', preview: '...', minutes: 15 },
+      { id: 3, title: 'Function vs Class Components', preview: '...', minutes: 47 }
+    ]
+  };
 
-function App() {
   return (
-    <div className="App">
-      You're on your own from here! Follow the deliverables; test things out in
-      the browser as you write your code; and good luck!
+    <div>
+      <h1>{data.name}</h1>
+      <ArticleList posts={data.posts} />
     </div>
   );
-}
+};
 
 export default App;
